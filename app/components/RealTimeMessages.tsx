@@ -35,10 +35,10 @@ export function RealTimeMessages({
   }, [supabase]);
 
   return (
-    <div className='flex flex-col gap-3'>
+    <div className='flex flex-col gap-3 mb-4'>
       {messages.map((message) => (
         <div
-          className='bg-slate-700 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl'
+          className='bg-slate-700 rounded-lg px-4 py-4 ring-1 ring-slate-900/5 shadow-xl'
           key={message.id}
         >
           <h2>@{message.user_id}</h2>

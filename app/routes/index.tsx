@@ -28,11 +28,14 @@ export default function Index() {
   const { messages } = useLoaderData<typeof loader>();
 
   return (
-    <main className='p-4'>
+    <main className='gird grid-cols-3 p-4 h-screen'>
       <nav className='flex justify-between mb-4'>
         <h1 className='text-3xl font-bold'>KikinDB Remix Chat</h1>
         <Login />
       </nav>
+
+      <RealTimeMessages serverMessages={messages} />
+
       <Form method='post' className='mb-4 flex'>
         <input
           className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
@@ -46,7 +49,6 @@ export default function Index() {
           Send Message
         </button>
       </Form>
-      <RealTimeMessages serverMessages={messages} />
     </main>
   );
 }

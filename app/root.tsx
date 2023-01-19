@@ -55,8 +55,10 @@ export default function App() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
-      if (session?.access_token !== serverSession?.access_token) {
+      console.log({ session });
+      if (!session) {
         revalidator.revalidate();
+        window.location.reload();
       }
     });
 
