@@ -34,5 +34,18 @@ export function RealTimeMessages({
     };
   }, [supabase]);
 
-  return <pre>{JSON.stringify(messages, null, 2)}</pre>;
+  return (
+    <div className='flex flex-col gap-3'>
+      {messages.map((message) => (
+        <div
+          className='bg-slate-700 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl'
+          key={message.id}
+        >
+          <h2>@{message.user_id}</h2>
+          <p className='text-white mt-2 text-sm'>{message.message}</p>
+          <p className='text-slate-400 mt-2 text-xs'>{message.created_at}</p>
+        </div>
+      ))}
+    </div>
+  );
 }

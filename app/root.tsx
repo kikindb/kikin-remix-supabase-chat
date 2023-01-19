@@ -16,7 +16,7 @@ import type { Database } from './types/database';
 import type { LoaderArgs, LinksFunction, MetaFunction } from '@remix-run/node';
 
 import { createSupabaseServerClient } from './utils/supabase.server';
-import styles from './styles/global.css';
+import styles from './styles/app.css';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -69,7 +69,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className='bg-slate-800 text-white'>
         <Outlet context={{ supabase }} />
         <ScrollRestoration />
         <Scripts />
