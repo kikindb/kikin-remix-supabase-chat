@@ -1,4 +1,3 @@
-import { json, LinksFunction, LoaderArgs, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -10,15 +9,18 @@ import {
   useRevalidator,
 } from '@remix-run/react';
 import { useState, useEffect } from 'react';
-import type { Database } from './types/database';
-
 import { createBrowserClient } from '@supabase/auth-helpers-remix';
+import { json } from '@remix-run/node';
+
+import type { Database } from './types/database';
+import type { LoaderArgs, LinksFunction, MetaFunction } from '@remix-run/node';
+
 import { createSupabaseServerClient } from './utils/supabase.server';
 import styles from './styles/global.css';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
-  title: 'KikinDB Chat in Real Tie',
+  title: 'KikinDB Chat in Real Time',
   viewport: 'width=device-width,initial-scale=1',
 });
 
