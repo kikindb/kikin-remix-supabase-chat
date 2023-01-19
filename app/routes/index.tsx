@@ -29,7 +29,7 @@ export default function Index() {
 
   return (
     <main>
-      <h1>kikinchat</h1>
+      <h1>KikinDB Remix Chat</h1>
       <Login />
       <Form method='post'>
         <input type='text' name='message' />
